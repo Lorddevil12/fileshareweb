@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Sharing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to File Sharing</h1>
+        <div class="options">
+            <div class="option">
+                <img src="{{ url_for('static', filename='send_icon.png') }}" alt="Send Files">
+                <h2><a href="{{ url_for('send') }}" class="button">Send Files</a></h2>
+            </div>
+            <div class="option">
+                <img src="{{ url_for('static', filename='receive_icon.png') }}" alt="Receive Files">
+                <h2><a href="{{ url_for('receive') }}" class="button">Receive Files</a></h2>
+            </div>
+            <div class="option">
+                <img src="{{ url_for('static', filename='pdf_to_word_icon.png') }}" alt="PDF to Word">
+                <h2><a href="{{ url_for('pdf_to_word') }}" class="button">PDF to Word Converter</a></h2>
+            </div>
+            <div class="option">
+                <img src="{{ url_for('static', filename='word_to_pdf_icon.png') }}" alt="Word to PDF">
+                <h2><a href="{{ url_for('word_to_pdf') }}" class="button">Word to PDF Converter</a></h2>
+            </div>
+            <div class="option">
+                <img src="{{ url_for('static', filename='compressor_icon.png') }}" alt="File Compressor">
+                <h2><a href="{{ url_for('compressor') }}" class="button">File Compressor</a></h2>
+            </div>
+            <div class="option">
+                <h2><a href="{{ url_for('logout') }}" class="button logout-button">Logout</a></h2>
+            </div>
+        </div>
+    </div>
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+        <ul>
+        {% for category, message in messages %}
+            <li class="{{ category }}">{{ message|safe }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+</body>
+</html>

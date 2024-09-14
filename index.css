@@ -1,0 +1,89 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #00fff7, #ff00ee);
+    animation: gradientAnimation 1s ease infinite;
+    margin: auto;
+    padding: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: linear-gradient(to right, #00fff7, #ff00ee);
+    border-radius:auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.option {
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+}
+
+.option img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.option h2 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border: radius 20px;
+    font: size 20px;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Logout Button Style */
+.logout-button {
+    background-color: #f10808;
+}
+
+.logout-button:hover {
+    background-color: #e60000;
+}
+
+/* Gradient animation */
+@keyframes gradientAnimation {
+    0% { background: linear-gradient(to right, #00fff7, #ff00ee); }
+    50% { background: linear-gradient(to right, #ff00ee, #00fff7); }
+    100% { background: linear-gradient(to right, #00fff7, #ff00ee); }
+}

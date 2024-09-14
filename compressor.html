@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Compressor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Compress Files</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="files">Select files to compress:</label>
+                <input type="file" id="files" name="files" multiple>
+            </div>
+            <input type="submit" value="Compress" class="button">
+        </form>
+        <a href="{{ url_for('index') }}" class="button">Go Back</a>
+
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            <ul>
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message|safe }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

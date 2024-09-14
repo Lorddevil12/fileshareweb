@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Files</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Send Files</h2>
+        <form action="{{ url_for('send') }}" method="post" enctype="multipart/form-data">
+            <label for="files">Select files:</label>
+            <input type="file" id="files" name="files" multiple>
+            
+            <label for="folder">Or select a folder:</label>
+            <input type="file" id="folder" name="folder" multiple webkitdirectory mozdirectory>
+
+            <input type="submit" value="Send Files">
+        </form>
+        <p><a href="{{ url_for('index') }}">Back to Home</a></p>
+    </div>
+</body>
+</html>
